@@ -1,22 +1,15 @@
 trigger:
-  branches:
-    include:
-      - master
+  - master
 
 pool:
   name: Default
 
 steps:
-  - checkout: self
-
-  - script: echo My first Azure Pipeline for Gradle project
+  - script: echo My Gradle Application
     displayName: 'Run a one-line script'
 
-  - script: chmod +x ./gradlew
-    displayName: 'Make gradlew executable'
-
-  - script: ./gradlew build
+  - script: gradle build
     displayName: 'Build with Gradle'
 
-  - script: ./gradlew run
-    displayName: 'Run Gradle Project'
+  - script: gradle run
+    displayName: 'Run gradle file'
